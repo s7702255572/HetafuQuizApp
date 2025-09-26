@@ -43,31 +43,31 @@ body, html {
 
 /* CORRECTED CSS */
 /* FINAL PLAY BUTTON STYLE - CORRECTED POSITION */
-.play-button {
-  position: absolute;
+button.play-button {
+  position: absolute !important;
 
   /* --- THE FIX: We increase the value to move the button DOWN --- */
-  top: 84%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 84% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
 
   /* The rest of your sizing and styling is perfect */
-  width: 70vw;
+  width: 70vw !important;
   max-width: 1000px;
-  height: 16vw;
+  height: 16vw !important;
   max-height: 200px;
-  font-size: 8vw;
+  font-size: 8vw !important;
   opacity: 1;
-  background: linear-gradient(45deg, #00bcd4, #0097a7);
+  background: linear-gradient(45deg, #00bcd4, #0097a7) !important;
   color: white;
-  border: 0.14vw solid rgba(255,255,255,0.3);
+  border: 0.14vw solid rgba(255,255,255,0.3) !important;
   font-family: 'inter', sans-serif;
-  font-weight: 800;
+  font-weight: 800 !important;
   line-height: 100%;
   letter-spacing: 4%;
-  border-radius: 100px;
+  border-radius: 100px !important;
   cursor: pointer;
-  box-shadow: 0 0.37vw 0.93vw rgba(0,0,0,0.3), inset 0 0.09vw 0.19vw rgba(255,255,255,0.3), 0 0 0.93vw rgba(0,188,212,0.5);
+  box-shadow: 0 0.37vw 0.93vw rgba(0,0,0,0.3), inset 0 0.09vw 0.19vw rgba(255,255,255,0.3), 0 0 0.93vw rgba(0,188,212,0.5) !important;
   transition: all 0.3s ease;
   text-transform: uppercase;
   overflow: hidden;
@@ -77,9 +77,9 @@ body, html {
 }
 
 /* Make sure your hover rule is also updated to match the transform */
-.play-button:hover {
-  transform: translate(-50%, -50%) scale(1.05); /* Keeps it centered on hover */
-  box-shadow: 0 0.56vw 1.16vw rgba(0,0,0,0.4), 0 0 1.39vw rgba(0,188,212,0.8);
+button.play-button:hover {
+  transform: translate(-50%, -50%) scale(1.05) !important; /* Keeps it centered on hover */
+  box-shadow: 0 0.56vw 1.16vw rgba(0,0,0,0.4), 0 0 1.39vw rgba(0,188,212,0.8) !important;
 }
 #nextNameBtn {
   /* This new, smaller 'top' value moves the button up to a visible position.
@@ -173,7 +173,7 @@ button {
   position: absolute;
   width: 67.05vw;
   height: 15.19vw;
-  top: 135.48vw;
+  top: 107.48vw;
   left: 20.65vw;
   transform: rotate(0deg);
   opacity: 1;
