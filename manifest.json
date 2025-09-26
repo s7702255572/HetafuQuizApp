@@ -1,0 +1,22 @@
+{
+  "name": "Hetafu Dental Quiz",
+  "short_name": "Hetafu Quiz",
+  "description": "A fun quiz about dental nutrition from Hetafu.",
+  "start_url": "./index.html",
+  "display": "fullscreen",
+  "background_color": "#45BABD",
+  "theme_color": "#45BABD",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "icons/icon-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "icons/icon-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}

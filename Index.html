@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link to your manifest file -->
+  <link rel="manifest" href="manifest.json">
+  
+  <!-- Theme color for the browser address bar (on mobile) -->
+  <meta name="theme-color" content="#45BABD">
+  <title>Hetafu Dental Quiz</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="center-wrapper">
+
+    <!-- STEP 1: Intro Screen -->
+    <!-- Only the PLAY button is shown at the start -->
+    <div id="step-1" class="intro-screen" style="display:block;">
+      <button class="play-button" id="playBtn">PLAY</button>
+    </div>
+
+    <!-- STEP 2: Value Proposition Screen -->
+    <!-- Explains the game and motivates the user to join -->
+    <div id="step-2" class="value-prop-bg" style="display:none;">
+      <div class="notepad-header">
+        <img src="images/logo.png" alt="Hetafu Logo" class="logo" />
+      </div>
+      <div class="notepad">
+        <div class="notepad-content">
+          <h2>Answer simple dental nutrition questions & win a surprise hamper from Hetafu!</h2>
+          <button class="im-in-btn" id="imInBtn">I'm In!</button>
+        </div>
+        <img src="images/tooth1.png" alt="Tooth Character" class="tooth-img" />
+      </div>
+    </div>
+
+    <!-- STEP 3: Collect User's Name -->
+    <!-- User types in their name before moving ahead -->
+    <div id="step-3" class="value-prop-bg" style="display:none;">
+      <div class="notepad-header">
+        <img src="images/logo.png" alt="Hetafu Logo" class="logo" />
+      </div>
+      <div class="notepad">
+        <div class="notepad-content1">
+          <div class="text-section">
+            <h2>Almost There!</h2>
+            <p>
+              One quick step to begin: just type your name below.
+            </p>
+          </div>
+          <input id="username" placeholder="Enter Your Name">
+        </div>
+        <button id="nextNameBtn">Next</button>
+         <img src="images/tooth1.png" alt="Tooth Character" class="tooth-img" />
+      </div>
+    </div>
+
+    <!-- STEP 4: Choose User Type -->
+    <!-- User selects whether they are a healthcare expert or a general user -->
+    <div id="step-4" class="value-prop-bg" style="display:none;">
+      <div class="notepad-header">
+        <img src="images/logo.png" alt="Hetafu Logo" class="logo" />
+      </div>
+      <div class="notepad">
+        <div class="notepad-content">
+          <h2>Let's personalise this for you!</h2>
+          <div class="radio-options">
+            <label class="radio-option">
+              <input type="radio" name="userType" value="dentist" id="dentistRadio">
+              <span class="radio-circle"></span>
+              <span class="dentistRadio">Dentist</span>
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="userType" value="general" id="generalRadio">
+              <span class="radio-circle"></span>
+              <span class="generalRadio">General User</span>
+            </label>
+          </div>
+        </div>
+      </div>
+       <img src="images/tooth1.png" alt="Tooth Character" class="tooth-img" />
+    </div>
+
+    <!-- STEP 5: Ready Screen -->
+    <!-- Shows a personalised message before starting the quiz -->
+    <div id="step-5" class="value-prop-bg" style="display:none;">
+      <div class="notepad-header">
+        <img src="images/logo.png" alt="Hetafu Logo" class="logo" />
+      </div>
+      <div class="notepad">
+        <div class="notepad-content">
+          <!-- These will be filled dynamically with user details -->
+          <h2 id="readyText"></h2>
+          <p id="readyDesc"></p>
+          <button id="startQuizBtn">Start Quiz</button>
+        </div>
+      </div>
+       <img src="images/tooth1.png" alt="Tooth Character" class="tooth-img" />
+    </div>
+
+    <!-- STEP 6: Quiz Questions -->
+    <!-- Displays the quiz progress, question text, and multiple choice options -->
+    <div id="step-6" class="value-prop-bg" style="display:none;">
+      <div class="notepad-header">
+        <img src="images/logo.png" alt="Hetafu Logo" class="logo" />
+      </div>
+      <div class="notepad">
+        <div class="notepad-content">
+          <div class="quiz-progress">
+            <div class="progress-bar">
+              <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <div class="progress-text">No. of questions <span class="progress-count" id="progressCount">1/5</span></div>
+          </div>
+          <h3 id="questionText"></h3>
+          <div class="options" id="optionsContainer"></div>
+        </div>
+      </div>
+    </div>
+    
+
+    <!-- STEP 7: Winner Screen -->
+    <!-- Shows congratulations message and prize collection details -->
+    <div id="step-7" class="value-prop-bg" style="display:none;">
+      <div class="notepad-header">
+        <img src="images/logo.png" alt="Hetafu Logo" class="logo" />
+      </div>
+      <div class="notepad winner-notepad">
+        <div class="notepad-content winner-content">
+          <h2 class="winner-title">Congratulations !!!</h2>
+          <div class="winner-name" id="winnerName"></div>
+          <div class="winner-prize">You’ve won a <span class="highlight">Hetafu Surprise Hamper.</span></div>
+          <div class="winner-instruction">
+            <span class="instruction-bg">Please visit our counter to collect your prize.</span>
+          </div>
+
+          <div class="winner-visuals">
+            <img src="images/1.png" alt="Arrow" class="winner-arrow" />
+            <img src="images/gift.png" alt="Gift" class="winner-gift" />
+          </div>
+        </div>
+        <img src="images/tooth1.png" alt="Tooth Character" class="tooth-img" />
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- External JS files -->
+  <!-- questions.js = stores quiz questions -->
+  <!-- script.js = handles quiz logic & step transitions -->
+  <script src="questions.js"></script>
+  <script src="script.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js')
+          .then(registration => {
+            console.log('ServiceWorker registration successful with scope: ', registration.scope);
+          })
+          .catch(err => {
+            console.log('ServiceWorker registration failed: ', err);
+          });
+      });
+    }
+  </script>
+</body>
+</html>

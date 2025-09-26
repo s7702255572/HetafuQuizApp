@@ -1,0 +1,639 @@
+/* 4K TV Optimized CSS (2160x3840) */
+/* CORRECTED CSS */
+body, html {
+  width: 100vw;
+  /* FIX: Use 100vh to ensure the height always matches the device screen's height */
+  height: 100vh; 
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Alegreya Sans', Arial, sans-serif;
+  background: #45BABD;
+  /* FIX: Hide any potential overflow to prevent scrollbars */
+  overflow: hidden; 
+}
+
+
+
+/* *, *::before, *::after {
+  box-sizing: border-box;
+} */
+
+.center-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+body.intro {
+  /* This rule is good, the problem was the body's height. 
+     This ensures the GIF covers the new, correct full-screen body. */
+  background: url('images/mr-bean-thumbs-up.gif') center center/cover no-repeat;
+  background-attachment: fixed;
+}
+
+/* CORRECTED CSS */
+/* FINAL PLAY BUTTON STYLE */
+.play-button {
+  position: absolute;
+  max-width: 1300px;
+  max-height: 250px;
+  font-size: 10vw;
+  /* This positions the button consistently near the bottom on all phones */
+  bottom: 15vw; 
+
+  /* This centers the button horizontally */
+  left: 50%;
+  transform: translateX(-50%);
+
+  /* These rules make the button's SIZE grow with the screen's width */
+  width: 70vw;
+  max-width: 1000px; /* Safety for tablets */
+  height: 16vw;
+  max-height: 200px;  /* Safety for tablets */
+
+  /* This makes the FONT SIZE grow with the screen's width */
+  font-size: 8vw;
+  
+  /* --- Your other visual styles are perfect --- */
+  opacity: 1;
+  background: linear-gradient(45deg, #00bcd4, #0097a7);
+  color: white;
+  border: 0.14vw solid rgba(255,255,255,0.3);
+  font-family: 'inter', sans-serif;
+  font-weight: 800;
+  line-height: 100%;
+  letter-spacing: 4%;
+  border-radius: 100px;
+  cursor: pointer;
+  box-shadow: 0 0.37vw 0.93vw rgba(0,0,0,0.3), inset 0 0.09vw 0.19vw rgba(255,255,255,0.3), 0 0 0.93vw rgba(0,188,212,0.5);
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.play-button:hover {
+  transform: translateY(-0.14vw) scale(1.05);
+  box-shadow: 0 0.56vw 1.16vw rgba(0,0,0,0.4), 0 0 1.39vw rgba(0,188,212,0.8);
+}
+
+/* Value Proposition Screen */
+.value-prop-bg {
+  
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #45BABD;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4.63vw 2.31vw;
+  z-index: 1;
+}
+
+.notepad-header {
+  text-align: center;
+  margin-bottom: 1.85vw;
+}
+
+.logo {
+  width: 23.87vw;
+  height: 19.48vw;
+  margin-bottom: 1.85vw;
+}
+
+.notepad {
+  background: url('images/background.png') center/cover no-repeat;
+  max-width: 97.31vw;
+  min-height: 147.18vw;
+}
+
+.notepad-content {
+  text-align: left;
+}
+
+.notepad-content h2 {
+  position: absolute;
+  width: 67.91vw;
+
+  top: 35.74vw;
+  left: 21.71vw;
+  transform: rotate(0deg);
+  font-size: 8.33vw;
+  font-weight: 700;
+  color: #222;
+  line-height: 100%;
+  word-wrap: break-word;
+  opacity: 1;
+  gap: 3.44vw;
+  margin: 0;
+}
+
+.im-in-btn {
+  position: absolute;
+  width: 67.04vw;
+  height: 13.75vw;
+  background: #1788A9;
+  top: 97.82vw;
+  left: 20.65vw;
+  color: #fff;
+  font-size: 5.73vw;
+  font-weight: 700;
+  border: none;
+  border-radius: 27.69vw;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.tooth-img {
+  position: absolute;
+  top: 125.88vw;
+  left: 50.69vw;
+  width: 39.81vw;
+  height: 44.17vw;
+  z-index: 3;
+}
+
+/* General Button Styles */
+button {
+  position: absolute;
+  width: 67.05vw;
+  height: 15.19vw;
+  top: 135.48vw;
+  left: 20.65vw;
+  transform: rotate(0deg);
+  opacity: 1;
+  background: linear-gradient(45deg, #20b2aa, #48cae4);
+  color: white;
+  border: none;
+  font-size: 5.73vw;
+  font-weight: 600;
+  border-radius: 27.70vw;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0.19vw 0.69vw rgba(0,0,0,0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button:hover {
+  transform: translateY(-0.09vw);
+  box-shadow: 0 0.28vw 0.93vw rgba(0,0,0,0.3);
+}
+
+
+/* Step 3 Content Positioning */
+.notepad-content1 {
+  position: absolute;
+  width: 67.91vw;
+  height: 43.38vw;
+  top: 35.74vw;
+  left: 21.71vw;
+  transform: rotate(0deg);
+  opacity: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 3.33vw;
+}
+
+/* Input Styles */
+/* input {
+  width: 61.34vw;
+  height: 13.90vw;
+  transform: rotate(0deg);
+  opacity: 1;
+  font-size: 4.19vw;
+  border: 0.65vw solid #1788A9;
+  border-radius: 26.21vw;
+  text-align: center;
+  transition: border-color 0.3s ease;
+  display: block;
+  top: 29.49vw;
+} */
+
+#username {
+  position: absolute !important;
+  top: 44.86vw !important;
+  left: 2.08vw !important;
+  width: 61.34vw !important;
+  height: 13.89vw !important;
+  font-size: 4.19vw !important;
+  border: 0.65vw solid #1788A9 !important;
+  border-radius: 26.21vw !important;
+  text-align: center !important;
+  z-index: 9999 !important;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+input:focus {
+  outline: none;
+  border-color: #20b2aa;
+}
+
+input:hover {
+  background: rgba(28, 167, 236, 0.1);
+}
+
+/* Winner Screen */
+.winner-notepad {
+  background: url('images/background.png') center/cover no-repeat;
+  max-width: 97.31vw;
+  min-height: 147.18vw;
+}
+
+.winner-content {
+  text-align: left;
+}
+
+.winner-title {
+  position: absolute;
+  top: 35.74vw;
+  left: 21.71vw;
+  font-size: 8.33vw;
+  font-weight: 700;
+  color: #222;
+  width: 67.87vw;
+}
+
+.winner-name {
+  position: absolute !important;
+  top: 50.93vw !important;
+  left: 21.71vw !important;
+  font-size: 6.94vw !important;
+  font-weight: 600 !important;
+  color: #222 !important;
+  font-style: italic !important;
+  z-index: 99999 !important;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.winner-prize {
+  position: absolute;
+  top: 64.81vw;
+  left: 21.71vw;
+  font-size: 5.56vw;
+  font-weight: 700;
+  color: #d50000;
+  width: 55.56vw;
+}
+
+.winner-prize .highlight {
+  color: #d50000;
+  font-weight: 700;
+}
+
+.winner-instruction {
+  position: absolute;
+  top: 78.70vw;
+  left: 21.71vw;
+}
+
+.instruction-bg {
+  top: 13.15vw;
+  width: 67.55vw;
+  height: 18.84vw;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  background: #b3e6fd;
+  color: #1976d2;
+  font-size: 4.63vw;
+  font-weight: 700;
+  padding: 0.46vw;
+  border-radius: 2.08vw;
+}
+
+.winner-visuals {
+  position: relative;
+  height: 13.89vw;
+}
+
+.winner-arrow {
+  position: absolute;
+  left: 36.22vw;
+  top: 83.33vw;
+  width: 23.63vw;
+  z-index: 2;
+}
+
+.winner-gift {
+  position: absolute;
+  left: 13.89vw;
+  top: 101.85vw;
+  width: 39.81vw;
+  height: 44.17vw;
+  z-index: 3;
+}
+
+.winner-tooth {
+  position: absolute;
+  left: 50.69vw;
+  top: 125.88vw;
+  width: 39.81vw;
+  height: 44.17vw;
+  z-index: 3;
+}
+
+/* Radio Button Styles for Step 4 */
+.radio-options {
+  position: absolute;
+  top: 83.33vw;
+  left: 21.71vw;
+  display: flex;
+  flex-direction: column;
+  gap: 3.70vw;
+}
+
+.radio-option {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 8.33vw;
+  font-weight: 700;
+  color: #222;
+}
+
+.radio-option input[type="radio"] {
+  display: none;
+}
+
+.radio-circle {
+  width: 5.56vw;
+  height: 5.56vw;
+  border: 0.37vw solid #666;
+  border-radius: 50%;
+  margin-right: 2.78vw;
+  position: relative;
+  background: white;
+}
+
+.radio-option input[type="radio"]:checked + .radio-circle {
+  border-color: #45BABD;
+  background: #45BABD;
+}
+
+.radio-option input[type="radio"]:checked + .radio-circle::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 2.78vw;
+  height: 2.78vw;
+  background: white;
+  border-radius: 50%;
+}
+
+.radio-text {
+  line-height: 1;
+}
+
+/* Progress and Quiz Styles */
+.progress {
+  position: absolute;
+  top: 32.41vw;
+  left: 21.71vw;
+  background: rgba(255,255,255,0.3);
+  border-radius: 0.93vw;
+  padding: 0.93vw 1.85vw;
+  color: black;
+  font-weight: bold;
+  font-size: 2.78vw;
+}
+
+.options {
+  position: absolute;
+  top: 92.59vw;
+  left: 21.71vw;
+  display: flex;
+  flex-direction: column;
+  gap: 2.78vw;
+  width: 69.44vw;
+}
+
+.quiz-option {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 5.56vw;
+  font-weight: 600;
+  color: #222;
+}
+
+.quiz-option input[type="checkbox"] {
+  display: none;
+}
+
+.quiz-checkbox {
+  width: 3.70vw;
+  height: 3.70vw;
+  border: 0.28vw solid #45BABD;
+  border-radius: 0.37vw;
+  margin-right: 1.85vw;
+  position: relative;
+  background: white;
+  flex-shrink: 0;
+}
+
+.quiz-option input[type="checkbox"]:checked + .quiz-checkbox {
+  background: #45BABD;
+}
+
+.quiz-option input[type="checkbox"]:checked + .quiz-checkbox::after {
+  content: '✓';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 2.31vw;
+  font-weight: bold;
+}
+
+.quiz-text {
+  line-height: 1.2;
+  flex: 1;
+}
+
+/* .quiz-next-btn {
+  bottom: 9.26vw;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 67.05vw;
+  height: 9.26vw;
+  background: #45BABD;
+  color: white;
+  border: none;
+  border-radius: 4.63vw;
+  font-size: 3.70vw;
+  font-weight: 600;
+  z-index: 15;
+} */
+.notepad-content1 h2 {
+  width: 67.91vw;
+  height: 10.00vw;
+  transform: rotate(0deg);
+  opacity: 1;
+  font-size: 8.33vw;
+}
+.notepad-content1 p {
+  font-family: 'Alegreya Sans', Arial, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 5.56vw;
+  line-height: 100%;
+  letter-spacing: -1.1%;
+}
+/* Step 6 Quiz Styles */
+.quiz-progress {
+  position: absolute;
+  top: 37.04vw;
+  left: 21.71vw;
+  display: flex;
+  flex-direction: column;
+  gap: 0.46vw;
+  z-index: 9999;
+  background: white;
+  padding: 0.69vw;
+  border-radius: 0.23vw;
+  width: 60.41vw;
+}
+
+.progress-bar {
+  width: 60.41vw;
+  height: 1.98vw;
+  background: #e0e0e0;
+  border: 0.46vw solid #45BABD;
+  border-radius: 1.16vw;
+  position: relative;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: #45BABD;
+  width: 20%;
+  transition: width 0.3s ease;
+  border-radius: 0.37vw;
+}
+
+.progress-bar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 20%;
+  width: 0.05vw;
+  height: 100%;
+  background: #ccc;
+  z-index: 1;
+}
+
+.progress-bar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width: 0.05vw;
+  height: 100%;
+  background: #ccc;
+  z-index: 1;
+}
+
+.progress-text {
+  font-size: 2.78vw;
+  font-weight: 600;
+  color: #000;
+  z-index: 15;
+  position: relative;
+}
+
+.progress-count {
+  float: right;
+}
+
+.quiz-options {
+  position: absolute;
+  top: 101.85vw;
+  left: 21.71vw;
+  display: flex;
+  flex-direction: column;
+  gap: 1.85vw;
+  z-index: 10;
+}
+
+#step-6 #nextNameBtn {
+  top: 106.48vw;
+}
+
+#questionText {
+  position: fixed !important;
+  top: 43.98vw !important;
+  left: 21.71vw !important;
+  font-family: 'Alegreya Sans', Arial, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 5.79vw;
+  line-height: 100%;
+  letter-spacing: -1.1%;
+  width: 72.45vw;
+  height: auto;
+  transform: rotate(0deg);
+  opacity: 1 !important;
+  z-index: 99999 !important;
+  color: #000 !important;
+  border-radius: 0.46vw;
+  display: block !important;
+  visibility: visible !important;
+}
+
+.quiz-next-btn {
+  position: fixed !important;
+  top: 157.41vw !important;
+  left: 15.74vw !important;
+  width: 67.05vw !important;
+  height: 13.75vw !important;
+  background: #45BABD !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 27.69vw !important;
+  font-size: 3.70vw !important;
+  font-weight: 600 !important;
+  z-index: 99999 !important;
+  display: block !important;
+  visibility: visible !important;
+  cursor: pointer !important;
+  opacity: 1 !important;
+}
+
+.notepad-content p {
+    position: absolute;
+    top: 65vw;
+    left: 21.71vw;
+    width: 67.91vw;
+    font-size: 5.56vw;
+    line-height: 1.2;
+    color: #222;
+}
+
+#startQuizBtn {
+  top: 98vw;
+}
