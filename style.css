@@ -47,7 +47,7 @@ body, html {
   position: absolute;
 
   /* --- THE FIX: We increase the value to move the button DOWN --- */
-  top: 90%;
+  top: 84%;
   left: 50%;
   transform: translate(-50%, -50%);
 
