@@ -26,39 +26,37 @@ body, html {
   justify-content: center;
 }
 
-
-
-body.intro {
-  /* This rule is good, the problem was the body's height. 
-     This ensures the GIF covers the new, correct full-screen body. */
+/* ADD THIS NEW RULE TO FIX THE BACKGROUND GAP */
+.intro-screen {
+  position: relative; /* Crucial for positioning the button inside it */
+  width: 100vw;
+  height: 100vh;
+  /* Apply the background directly to the container */
   background: url('images/mr-bean-thumbs-up.gif') center center/cover no-repeat;
-  background-attachment: fixed;
 }
 
+/* body.intro {
+  
+  background: url('images/mr-bean-thumbs-up.gif') center center/cover no-repeat;
+  background-attachment: fixed;
+} */
+
 /* CORRECTED CSS */
-/* FINAL PLAY BUTTON STYLE */
+/* FINAL PLAY BUTTON STYLE - CORRECTED POSITION */
 .play-button {
   position: absolute;
-  max-width: 1300px;
-  max-height: 250px;
-  font-size: 10vw;
-  /* This positions the button consistently near the bottom on all phones */
-  bottom: 15vw; 
 
-  /* This centers the button horizontally */
+  /* --- THE FIX: We increase the value to move the button DOWN --- */
+  top: 90%;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%);
 
-  /* These rules make the button's SIZE grow with the screen's width */
+  /* The rest of your sizing and styling is perfect */
   width: 70vw;
-  max-width: 1000px; /* Safety for tablets */
+  max-width: 1000px;
   height: 16vw;
-  max-height: 200px;  /* Safety for tablets */
-
-  /* This makes the FONT SIZE grow with the screen's width */
+  max-height: 200px;
   font-size: 8vw;
-  
-  /* --- Your other visual styles are perfect --- */
   opacity: 1;
   background: linear-gradient(45deg, #00bcd4, #0097a7);
   color: white;
@@ -78,11 +76,16 @@ body.intro {
   justify-content: center;
 }
 
+/* Make sure your hover rule is also updated to match the transform */
 .play-button:hover {
-  transform: translateY(-0.14vw) scale(1.05);
+  transform: translate(-50%, -50%) scale(1.05); /* Keeps it centered on hover */
   box-shadow: 0 0.56vw 1.16vw rgba(0,0,0,0.4), 0 0 1.39vw rgba(0,188,212,0.8);
 }
-
+#nextNameBtn {
+  /* This new, smaller 'top' value moves the button up to a visible position.
+     It overrides the very large 'top: 135.48vw' from the generic 'button' rule. */
+  top: 105vw;
+}
 /* Value Proposition Screen */
 .value-prop-bg {
   
